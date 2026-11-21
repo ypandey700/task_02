@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+.preview-profile/
+test-results/
+playwright-report/
+*.tar.gz
+.env
+.env.*
+!.env.example

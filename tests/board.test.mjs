@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {filterRecords,validateRecords} from '../dist/board.js';
+const payload = JSON.parse(await readFile(new URL('../dist/data/internships.json',import.meta.url)));
+const rows = validateRecords(payload);
+test('preserves the five supplied IDs',() => assert.deepEqual(rows.map(row => row.id),['INT-101','INT-102','INT-103','INT-104','INT-105']));
+test('search ignores case and surrounding spaces and includes skills',() => assert.equal(filterRecords(rows,{search:'  jAVaScript  '})[0].id,'INT-101'));
+test('search terms and both filters combine',() => {assert.equal(filterRecords(rows,{search:'SQL',domain:'Full Stack Development',mode:'Hybrid'})[0].id,'INT-102');assert.equal(filterRecords(rows,{search:'SQL',domain:'Full Stack Development',mode:'Remote'}).length,0);assert.equal(filterRecords(rows,{search:'frontend css'}).length,1);});
+test('rejects malformed and duplicate records',() => {for(const bad of [null,{}, {internships:[{}]},{internships:[rows[0],rows[0]]},{internships:[{...rows[0],openings:0}]}]) assert.throws(() => validateRecords(bad));});
+test('supports a valid empty dataset',() => assert.deepEqual(validateRecords({internships:[]}),[]));

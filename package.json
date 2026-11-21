@@ -1,0 +1,9 @@
+{
+  "name": "launchpad-internship-board",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Accessible internship board built with semantic HTML, CSS and vanilla JavaScript",
+  "scripts": {"start": "node scripts/serve.mjs", "test": "node --test tests/board.test.mjs && playwright test"},
+  "devDependencies": {"@playwright/test": "^1.65.1"}
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore your next chapter with Launchpad. Discover internship opportunities by skill, domain, and work mode.">
+  <title>Launchpad — Find your starting point</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#opportunities">Skip to opportunities</a>
+  <header class="site-header"><a class="brand" href="./" aria-label="Launchpad home"><span class="brand-icon" aria-hidden="true">✳</span>launchpad<span class="brand-dot">.</span></a><nav aria-label="Main navigation"><a href="#opportunities" aria-current="page">Find an internship</a><a href="#about">About the board</a></nav><span class="header-note">Small steps. Big beginnings.</span></header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</p><h1 id="hero-title">Big ambitions.<br>A <em>real starting point.</em></h1><p class="intro">Discover internships that turn your curiosity into experience.<br class="desktop-break"> Find your people, build your skills, and take that first step.</p><div class="hero-meta"><span class="avatar-stack" aria-hidden="true"><i>A</i><i>R</i><i>M</i><i>S</i></span><p>Built for curious minds.<br><strong>Open to new beginnings.</strong></p></div></div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-star">✳</span><div class="floating-label label-top"><span>✦</span> Potential, meet opportunity.</div><div class="step step-one"><span>01</span> Stay curious.</div><div class="step step-two"><span>02</span> Start building.</div><div class="step step-three"><span>03</span> Find your thing.<span class="spark">✧</span></div><div class="floating-label label-bottom">Your future is a work in progress.<span>And that’s a good thing.</span></div></div>
+    </section>
+    <section id="opportunities" class="opportunities" aria-labelledby="opportunities-title" tabindex="-1">
+      <div class="section-heading"><div><p class="eyebrow">A LITTLE EXPLORATION GOES A LONG WAY</p><h2 id="opportunities-title">Find your first big opportunity<span>.</span></h2></div><span class="seed-note">Fictional roles. Real possibilities.</span></div>
+      <form id="filters" role="search" aria-label="Filter internships">
+        <div class="search-field"><label for="search">Search internships</label><div class="input-wrap"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" name="search" type="search" placeholder="Try a role, skill, or location…" autocomplete="off"></div></div>
+        <div><label for="domain">Domain</label><select id="domain" name="domain"><option value="">All domains</option></select></div>
+        <div><label for="mode">Work mode</label><select id="mode" name="mode"><option value="">All modes</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></div>
+        <button class="reset" type="reset">Reset filters</button>
+      </form>
+      <div class="results-bar"><p id="result-count" role="status" aria-live="polite">Loading opportunities…</p><span>Something for every kind of curious.</span></div>
+      <div id="results" aria-busy="true"><div class="state"><span class="loader" aria-hidden="true"></span><h3>Finding your starting point…</h3></div></div>
+      <noscript><p class="state">JavaScript is needed to search this board. You can <a href="data/internships.json">read the internship records here</a>.</p></noscript>
+    </section>
+    <section id="about" class="bottom-note"><span class="note-icon" aria-hidden="true">✧</span><div><h2>You don’t need it all figured out.</h2><p>Just a little curiosity and a place to start. Explore what feels like you.</p></div><span class="note-tag">Every expert was a beginner.</span></section>
+  </main>
+  <footer><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">✳</span>launchpad<span class="brand-dot">.</span></a><p>A learning project using fictional EdVyro internship records.</p><a href="project.html">Project &amp; submission notes</a><span>Made for your next step.</span></footer>
+  <dialog id="details" aria-labelledby="detail-title"><div class="dialog-header"><span class="eyebrow">EXPLORE THE OPPORTUNITY</span><button id="close-dialog" class="close" aria-label="Close internship details">×</button></div><div id="detail-content"></div></dialog>
+</body>
+</html>
